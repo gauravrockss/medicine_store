@@ -2,8 +2,6 @@
 include_once 'includes/header.php'; 
 include_once 'database/database.php';
 
-
-
 $user_id = $_SESSION['id'];
 
 $db = new DB();
@@ -12,7 +10,6 @@ $medicines = $db->fire("SELECT * FROM `cart` INNER JOIN `medicine` WHERE cart.pr
 $total = 0;
 ?>
 <body>
-
     
 <?php include_once 'includes/navbar.php'; ?>
         <h1 class =" heading"> My Card</h1>
@@ -76,5 +73,7 @@ $total = 0;
         </table>
         <?php  if(isset($_GET['message'])) { ?>
     <h3> <?php echo $_GET['message'];} ?> </h3> 
+    
+    <?php include_once 'includes/footer.php'; ?>
 </body>
 </html>
